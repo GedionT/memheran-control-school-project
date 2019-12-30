@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Employee {
 
     // Declaring the types of data all employee's have registered upon employment
@@ -8,8 +10,8 @@ public class Employee {
        private String sex;
        private String nationality;
        private String city;
-       private String Subcity;
-       private String Woreda;
+       private String subcity;
+       private String woreda;
        private int kebele;
        private String place_of_birth;
        private Date date_of_birth;
@@ -22,8 +24,6 @@ public class Employee {
 
 
     // Constructor for employee class
-
-
     public Employee(String empId, String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, int kebele, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, double salary, String phone, String email) {
         this.empId = empId;
         this.firstName = firstName;
@@ -32,8 +32,8 @@ public class Employee {
         this.sex = sex;
         this.nationality = nationality;
         this.city = city;
-        Subcity = subcity;
-        Woreda = woreda;
+        subcity = subcity;
+        woreda = woreda;
         this.kebele = kebele;
         this.place_of_birth = place_of_birth;
         this.date_of_birth = date_of_birth;
@@ -77,11 +77,11 @@ public class Employee {
     }
 
     public void setSubcity(String subcity) {
-        Subcity = subcity;
+        this.subcity = subcity;
     }
 
     public void setWoreda(String woreda) {
-        Woreda = woreda;
+        this.woreda = woreda;
     }
 
     public void setKebele(int kebele) {
@@ -150,11 +150,11 @@ public class Employee {
     }
 
     public String getSubcity() {
-        return Subcity;
+        return subcity;
     }
 
     public String getWoreda() {
-        return Woreda;
+        return woreda;
     }
 
     public int getKebele() {
@@ -194,7 +194,7 @@ public class Employee {
     }
 
     // exposed methods
-        //calcAge();
+        //public int calcAge() {    return Date() - date_of_birth; }
 
         //calcTax();
 
