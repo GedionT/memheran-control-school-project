@@ -3,7 +3,7 @@ package course;
 import java.util.Date;
 
 public interface course {
-    default void stats() {
+    default void status() {
         String term;
         Date year;
         String department;
