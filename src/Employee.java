@@ -4,21 +4,10 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class Employee {
+public class Employee extends Person {
 
     // Declaring the types of data all employee's have registered upon employment
        private String empId;
-       private String firstName;
-       private String middleName;
-       private String lastName;
-       private String sex;
-       private String nationality;
-       private String city;
-       private String subcity;
-       private String woreda;
-       private int kebele;
-       private String place_of_birth;
-       private Date date_of_birth;
        private Date start_date;
        private String maritalStatus;
        private String educationLevel;
@@ -27,42 +16,48 @@ public class Employee {
        private String email;
 
 
-       Scanner input = new Scanner(System.in);
+       private Scanner input = new Scanner(System.in);
 
-   public void insert() throws ParseException {
+       // optional and not for use
+    public Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth) {
+        super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth);
+    }
+
+
+    public void insert() throws ParseException {
        System.out.println("\n\n===========================\n");
        setEmpId();
        System.out.print("Employment Id: " + getEmpId());
        System.out.print("\nFirst Name: ");
-       firstName = input.nextLine();
-       stringValidate(firstName);
+       setFirstName(input.nextLine());
+       stringValidate(getFirstName());
        System.out.print("\nMiddle Name: ");
-       middleName = input.nextLine();
-       stringValidate(middleName);
+       setMiddleName(input.nextLine());
+       stringValidate(getMiddleName());
        System.out.print("\nLast Name: ");
-       lastName = input.nextLine();
-       stringValidate(lastName);
+       setLastName(input.nextLine());
+       stringValidate(getLastName());
        System.out.print("\nGender: ");
-       sex = input.nextLine();
-       stringValidate(sex);
+       setSex(input.nextLine());
+       stringValidate(getSex());
        System.out.print("\nNationality: ");
-       nationality = input.nextLine();
-       stringValidate(nationality);
+       setNationality(input.nextLine());
+       stringValidate(getNationality());
        System.out.print("\nCity: ");
-       city = input.nextLine();
-       stringValidate(city);
+       setCity(input.nextLine());
+       stringValidate(getCity());
        System.out.print("\nSub-City: ");
-       subcity = input.nextLine();
-       stringValidate(subcity);
+       setSubcity(input.nextLine());
+       stringValidate(getSubcity());
        System.out.print("\nWoreda: ");
-       woreda = input.nextLine();
-       stringValidate(woreda);
+       setWoreda(input.nextLine());
+       stringValidate(getWoreda());
        System.out.print("\nPlace of Birth: ");
-       place_of_birth = input.nextLine();
-       stringValidate(place_of_birth);
+       setPlace_of_birth(input.nextLine());
+       stringValidate(getPlace_of_birth());
        System.out.print("\nDate of Birth (DD/MM/YYYY): ");
        String DoB = input.nextLine();
-       date_of_birth = new SimpleDateFormat("dd/MM/yyyy").parse(DoB);
+       setDate_of_birth(new SimpleDateFormat("dd/MM/yyyy").parse(DoB));
        System.out.print("\nMarital Status (Married, Single, Engaged): ");
        maritalStatus = input.nextLine();
        stringValidate(maritalStatus);
@@ -82,53 +77,9 @@ public class Employee {
 
    private static int amount = 100;
     // setters for individual information update
-    private void setEmpId() {
+    public void setEmpId() {
        this.empId = "ETS" + amount;
        amount++;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setSubcity(String subcity) {
-        this.subcity = subcity;
-    }
-
-    public void setWoreda(String woreda) {
-        this.woreda = woreda;
-    }
-
-    public void setKebele(int kebele) {
-        this.kebele = kebele;
-    }
-
-    public void setPlace_of_birth(String place_of_birth) {
-        this.place_of_birth = place_of_birth;
-    }
-
-    public void setDate_of_birth(Date date_of_birth) {
-        this.date_of_birth = date_of_birth;
     }
 
     public void setStart_date(Date start_date) {
@@ -158,54 +109,7 @@ public class Employee {
     }
 
     // getters
-
-    public String getEmpId() {
-        return empId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public String getNationality() {
-        return nationality;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getSubcity() {
-        return subcity;
-    }
-
-    public String getWoreda() {
-        return woreda;
-    }
-
-    public int getKebele() {
-        return kebele;
-    }
-
-    public String getPlace_of_birth() {
-        return place_of_birth;
-    }
-
-    public Date getDate_of_birth() {
-        return date_of_birth;
-    }
+    public String getEmpId() { return empId; }
 
     public Date getStart_date() {
         return start_date;
@@ -313,25 +217,4 @@ public class Employee {
         //calcEmpTime();
 
         //public void display()
-
-
-    public static void main(String[] args) {
-        ArrayList<Employee> users = new ArrayList<Employee>();
-        Employee emp=new Employee();
-        Employee emp2=new Employee();
-        try {
-            users.add(emp);
-            emp.insert();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            users.add(emp2);
-            emp2.insert();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
