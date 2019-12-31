@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -34,40 +35,40 @@ public class Employee {
        System.out.print("Employment Id: " + getEmpId());
        System.out.print("\nFirst Name: ");
        firstName = input.nextLine();
-       stringValidate(getFirstName());
+       stringValidate(firstName);
        System.out.print("\nMiddle Name: ");
        middleName = input.nextLine();
-       stringValidate(getMiddleName());
+       stringValidate(middleName);
        System.out.print("\nLast Name: ");
        lastName = input.nextLine();
-       stringValidate(getLastName());
+       stringValidate(lastName);
        System.out.print("\nGender: ");
        sex = input.nextLine();
-       stringValidate(getSex());
+       stringValidate(sex);
        System.out.print("\nNationality: ");
        nationality = input.nextLine();
-       stringValidate(getNationality());
+       stringValidate(nationality);
        System.out.print("\nCity: ");
        city = input.nextLine();
-       stringValidate(getCity());
+       stringValidate(city);
        System.out.print("\nSub-City: ");
        subcity = input.nextLine();
-       stringValidate(getCity());
+       stringValidate(subcity);
        System.out.print("\nWoreda: ");
        woreda = input.nextLine();
-       stringValidate(getWoreda());
+       stringValidate(woreda);
        System.out.print("\nPlace of Birth: ");
        place_of_birth = input.nextLine();
-       stringValidate(getPlace_of_birth());
-       System.out.print("\nDate of Birth (DD-MM-YYYY): ");
+       stringValidate(place_of_birth);
+       System.out.print("\nDate of Birth (DD/MM/YYYY): ");
        String DoB = input.nextLine();
        date_of_birth = new SimpleDateFormat("dd/MM/yyyy").parse(DoB);
        System.out.print("\nMarital Status (Married, Single, Engaged): ");
        maritalStatus = input.nextLine();
-       stringValidate(getMaritalStatus());
+       stringValidate(maritalStatus);
        System.out.print("\nEducation Level: (BSC/Msc/PhD): ");
        educationLevel = input.nextLine();
-       stringValidate(getEducationLevel());
+       stringValidate(educationLevel);
        System.out.print("\nPhone :");
        phone = input.nextLine();
        phoneValidate();
@@ -312,5 +313,25 @@ public class Employee {
         //calcEmpTime();
 
         //public void display()
+
+
+    public static void main(String[] args) {
+        ArrayList<Employee> users = new ArrayList<Employee>();
+        Employee emp=new Employee();
+        Employee emp2=new Employee();
+        try {
+            users.add(emp);
+            emp.insert();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            users.add(emp2);
+            emp2.insert();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
