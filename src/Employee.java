@@ -1,4 +1,7 @@
+import java.text.ParseException;
 import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
 
 public class Employee {
 
@@ -23,34 +26,58 @@ public class Employee {
        private String email;
 
 
-    // Constructor for employee class
-    public Employee(String empId, String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, int kebele, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, double salary, String phone, String email) {
-        this.empId = empId;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.sex = sex;
-        this.nationality = nationality;
-        this.city = city;
-        subcity = subcity;
-        woreda = woreda;
-        this.kebele = kebele;
-        this.place_of_birth = place_of_birth;
-        this.date_of_birth = date_of_birth;
-        this.start_date = start_date;
-        this.maritalStatus = maritalStatus;
-        this.educationLevel = educationLevel;
-        this.salary = salary;
-        this.phone = phone;
-        this.email = email;
-    }
+       Scanner input = new Scanner(System.in);
+
+   public void insert() throws ParseException {
+       System.out.println("\n\n===========================\n");
+       System.out.print("First Name: ");
+       firstName = input.nextLine();
+       stringValidate(getFirstName());
+       System.out.print("\nMiddle Name: ");
+       middleName = input.nextLine();
+       stringValidate(getMiddleName());
+       System.out.print("\nLast Name: ");
+       lastName = input.nextLine();
+       stringValidate(getLastName());
+       System.out.print("\nGender: ");
+       sex = input.nextLine();
+       stringValidate(getSex());
+       System.out.print("\nNationality: ");
+       nationality = input.nextLine();
+       stringValidate(getNationality());
+       System.out.print("\nCity: ");
+       city = input.nextLine();
+       stringValidate(getCity());
+       System.out.print("\nSub-City: ");
+       subcity = input.nextLine();
+       stringValidate(getCity());
+       System.out.print("\nWoreda: ");
+       woreda = input.nextLine();
+       stringValidate(getWoreda());
+       System.out.print("\nPlace of Birth: ");
+       place_of_birth = input.nextLine();
+       stringValidate(getPlace_of_birth());
+       System.out.print("\nDate of Birth (DD-MM-YYYY): ");
+       String DoB = input.nextLine();
+       date_of_birth = new SimpleDateFormat("dd/MM/yyyy").parse(DoB);
+       System.out.print("\nMarital Status (Married, Single, Engaged): ");
+       maritalStatus = input.nextLine();
+       stringValidate(getMaritalStatus());
+       System.out.print("\nEducation Level: (BSC/Msc/PhD): ");
+       educationLevel = input.nextLine();
+       stringValidate(getEducationLevel());
+       System.out.print("\nPhone :");
+       phone = input.nextLine();
+       phoneValidate(getPhone());
+       System.out.print("\nE-mail: ");
+       email = input.nextLine();
+       emailValidate(getEmail());
+       System.out.print("\nSalary: ");
+       salary = input.nextDouble();
+       System.out.println("\n\n===========================\n");
+   }
 
     // setters for individual information update
-
-
-    public void setEmpId(String empId) {
-        this.empId = empId;
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -114,13 +141,16 @@ public class Employee {
 
     public void setPhone(String phone) {
         this.phone = phone;
+        phoneValidate();
     }
 
     public void setEmail(String email) {
         this.email = email;
+        emailValidate();
     }
 
-    // getters for employee's data
+    // getters
+
     public String getEmpId() {
         return empId;
     }
@@ -193,11 +223,22 @@ public class Employee {
         return email;
     }
 
+
     // exposed methods
-        //public int calcAge() {    return Date() - date_of_birth; }
+        //stringValidate();
+
+        // phoneValidate();
+
+        // emailValidate();
+
+        // calcAge();
 
         //calcTax();
 
-        //calcEmpTime(); // to calculate duration of employment
+        //calcNet();
+
+        //calcEmpTime();
+
+        //public void display()
 
 }
