@@ -30,7 +30,9 @@ public class Employee {
 
    public void insert() throws ParseException {
        System.out.println("\n\n===========================\n");
-       System.out.print("First Name: ");
+       setEmpId();
+       System.out.print("Employment Id: " + getEmpId());
+       System.out.print("\nFirst Name: ");
        firstName = input.nextLine();
        stringValidate(getFirstName());
        System.out.print("\nMiddle Name: ");
@@ -68,16 +70,21 @@ public class Employee {
        stringValidate(getEducationLevel());
        System.out.print("\nPhone :");
        phone = input.nextLine();
-       phoneValidate(getPhone());
+       phoneValidate();
        System.out.print("\nE-mail: ");
        email = input.nextLine();
-       emailValidate(getEmail());
+       emailValidate();
        System.out.print("\nSalary: ");
        salary = input.nextDouble();
        System.out.println("\n\n===========================\n");
    }
 
+   private static int amount = 100;
     // setters for individual information update
+    private void setEmpId() {
+       this.empId = "ETS" + amount;
+       amount++;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -225,11 +232,76 @@ public class Employee {
 
 
     // exposed methods
-        //stringValidate();
+        public String stringValidate(String param){
+            param.trim();
+            String next = "";
+            for(int i=0; i<param.length(); i++){
+                if((param.charAt(i) <= 'a' && param.charAt(i)>='z') || (param.charAt(i)<='A' && param.charAt(i) >='Z')){
+                    System.out.println("Please enter a valid string pattern");
+                    next = input.nextLine();
+                    stringValidate(next);
+                }
+            }
+            return next;
+        }
 
-        // phoneValidate();
+        public void phoneValidate() {
 
-        // emailValidate();
+                if (phone.length() < 10 || phone.length() > 13 || phone.length() == 11) {
+                    System.out.println("The phone number you entered is invalid\n");
+                    System.out.println("Please enter a valid phone number");
+                    phone = input.next();
+                    phoneValidate();
+                }
+                for (int i = 0; i < phone.length(); i++) {
+                    if ((phone.charAt(i) < '0' || phone.charAt(i) > '9')&&phone.charAt(0)!='+') {
+                        System.out.println("The phone number you entered contains characters other than numbers");
+                        System.out.println("Please enter a valid phone number");
+                        phone = input.next();
+                        phoneValidate();
+                        break;
+                    }
+                }
+
+                if ((phone.charAt(0) == '0' && phone.charAt(1) != '9')||(phone.charAt(0) != '0' && phone.charAt(1) == '9')) {
+                    System.out.println("The phone number you entered is invalid\n");
+                    System.out.println("Please enter a valid phone number");
+                    phone = input.next();
+                    phoneValidate();
+                }
+                else if(phone.charAt(0)=='+'&&phone.charAt(1)!='2'&&phone.charAt(2)!='5'&&phone.charAt(3)!='1'){
+                    System.out.println("The phone number you entered is invalid\n");
+                    System.out.println("Please enter a valid phone number");
+                    phone = input.next();
+                    phoneValidate();
+                }
+                else if(phone.charAt(0)=='2'&&phone.charAt(1)!='5'&&phone.charAt(2)!='1'){
+                    System.out.println("The phone number you entered is invalid\n");
+                    System.out.println("Please enter a valid phone number");
+                    phone = input.next();
+                    phoneValidate();
+                }
+            }
+
+        public void emailValidate() {
+
+            int flag1 = 0,flag2 = 0; //to check whether there is "@" and "." in the email address
+            for(int i=3;i<email.length();i++){
+                if(email.charAt(i)=='@'&&email.charAt(email.length()-1)!='@'){
+                    flag1=1;
+                }
+                else if(email.charAt(i)=='.'&&email.charAt(email.length()-1)!='.'){
+                    flag2 = 1;
+                }
+            }
+            if(flag1==0||flag2==0){
+                System.out.println("Invalid Email Address\n");
+                System.out.println("please enter a valid email address");
+                email = input.next();
+                input.nextLine();
+                emailValidate();
+            }
+        }
 
         // calcAge();
 
