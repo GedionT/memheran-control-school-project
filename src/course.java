@@ -1,5 +1,3 @@
-package course;
-
 import java.util.Date;
 
 public interface course {
