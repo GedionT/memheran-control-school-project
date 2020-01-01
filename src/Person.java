@@ -1,6 +1,4 @@
-import java.text.ParseException;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public abstract class Person {
     private String firstName;

@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,8 +20,15 @@ public class Employee extends Person {
        private Scanner input = new Scanner(System.in);
 
        // optional and not for use
-    public Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth) {
+    public Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth);
+        setEmpId();
+        this.start_date = start_date;
+        this.maritalStatus = maritalStatus;
+        this.educationLevel = educationLevel;
+        this.salary = salary;
+        this.phone = phone;
+        this.email = email;
     }
 
 
