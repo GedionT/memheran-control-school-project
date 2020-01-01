@@ -13,5 +13,9 @@ public class Instructor extends Employee implements course {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary, phone, email);
     }
 
+    public void displayTable() {
+        // to print table
+
+    }
 
 }

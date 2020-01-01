@@ -12,7 +12,7 @@ public abstract class Person {
     private String place_of_birth;
     private Date date_of_birth;
 
-    // Entire constructor
+    // Entire constructor for superclass
     public Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda,  String place_of_birth, Date date_of_birth) {
         this.firstName = firstName;
         this.middleName = middleName;

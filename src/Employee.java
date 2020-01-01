@@ -1,6 +1,4 @@
-import javax.print.DocFlavor;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -12,7 +10,7 @@ public class Employee extends Person {
        private Date start_date;
        private String maritalStatus;
        private String educationLevel;
-       private double salary;
+       private Double salary;
        private String phone;
        private String email;
 

@@ -7,24 +7,33 @@ import java.util.Scanner;
 
 
 public class Main {
-     static Scanner input = new Scanner(System.in);
 
-     // Main Method to perform all operations
+    ArrayList<Instructor> instructors = new ArrayList<>();
+    ArrayList<Admin> admins = new ArrayList<>();
+
+    private Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) throws ParseException {
-        boolean entry = auth();
 
-        if(entry) {
-            menu();
+        Scanner loader = new Scanner(System.in);
+        String x = null;
+        Main main = new Main();                                   // creates a main object to access methods in this class
 
-        }
-        else{
-            System.out.println("Authorization failed, good-bye");
-        }
+        do {
+            boolean entry = main.auth();                         // authenticate administrator
+
+            if (entry)
+                main.menu();                                      // if entry from auth returns true, goes to menu
+            else {
+                System.out.println("Authorization failed, Try again? (Yes/No) ");
+                x = loader.next();
+            }
+        }while( x != "no" || (x != "No") );
 
     }
 
     // method to send authorization signal
-    static boolean auth() throws ParseException {
+    private boolean auth() throws ParseException {
         System.out.println("\n\n Authorization");
         System.out.println(" ==================== ");
         System.out.println("1. Already Have an Admin Account");
@@ -41,7 +50,8 @@ public class Main {
 
                     //check if it's in the file of admin list
 
-                    // return true;
+                     return true;
+
             case 2:
                 System.out.println("Enter information");
                 System.out.print("First name: ");
@@ -104,18 +114,20 @@ public class Main {
                 Admin newEntrant = new Admin(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary
                 , phone, email, usrname, pswd);
 
-                System.out.println("+++++++++++++++++++++++++++++");
-                System.out.println("Account Created Successfully");
+                System.out.println("==============================");
+                System.out.println(" Account Created Successfully ");
+                System.out.println("==============================");
                 auth(); break;
             default:
-                System.out.print("Wrong Selection, try agian");
+                System.out.print("Wrong Selection, try again");
                 auth(); break;
             }
 
        return false;
     }
 
-    static void menu() {
+    private void menu() {
+
         System.out.println("\n\n ==================================================== ");
         System.out.println(" --- INSTRUCTOR INFORMATION IN COURSE MANAGEMENT --- ");
         System.out.println(" ==================================================== ");
@@ -127,5 +139,19 @@ public class Main {
         System.out.println("\t 4. Search Instructor by Id");
         System.out.println("\t 5. Sort Instructors by Name");
         System.out.println("\t 6. List All Instructors \n\n");
+        System.out.println("Enter your Choice: ");
+
+        int choice = input.nextInt();
+
+        switch(choice) {
+            case 1: ;break;
+            case 2: ;break;
+            case 3: ;break;
+            case 4: ;break;
+            case 5: ;break;
+            case 6: ;break;
+            default: System.out.println("Select among the choices");
+                break;
+        }
     }
 }
