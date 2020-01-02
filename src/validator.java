@@ -11,18 +11,22 @@ public interface validator {
      */
 
      default String stringValidate(String param){
-        String blindPass = param;
+         int counter = 0;
         String next = "";
         for(int i=0; i<param.length(); i++){
-            if((param.charAt(i) <= 'a' && param.charAt(i)>='z') ) {  // checks if char at i is less or equal to a and z (in between)
-                if(param.charAt(i)<='A' && param.charAt(i) >='Z') { // checks if char at i is less or equal to A and Z (in between)
-                    System.out.println("Please enter a valid string pattern");
-                    next = input.nextLine();
-                    stringValidate(next);
-                }
+
+            if(Character.isLetter(param.charAt(i))) {
+                counter++;
             }
         }
-        return blindPass;
+
+        if(counter == param.length()) return param;
+        else
+        {
+            System.out.println("Please Enter an alphabetic string");
+            next = input.next();
+            return stringValidate(next);
+        }
     }
 
     /*

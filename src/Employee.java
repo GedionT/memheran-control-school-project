@@ -60,11 +60,11 @@ public abstract class Employee extends Person implements validator{
     }
 
     public void setPhone(String phone) {
-        phoneValidate(phone);
+        this.phone = phone;
     }
 
     public void setEmail(String email) {
-        emailValidate(email);
+       this.email = email;
     }
 
     // getters
