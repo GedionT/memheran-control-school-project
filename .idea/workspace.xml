@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaaa258d-7deb-4a76-84c4-0193b869cf65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Courses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/validator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/course.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/validator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,6 +16,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="185" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -137,5 +136,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor fix, entry and interface remains" />
     <option name="LAST_COMMIT_MESSAGE" value="minor fix, entry and interface remains" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PROJ_OOP$Main.ic" NAME="Main Coverage Results" MODIFIED="1577976500199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

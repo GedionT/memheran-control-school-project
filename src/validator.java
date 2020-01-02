@@ -11,7 +11,7 @@ public interface validator {
      */
 
      default String stringValidate(String param){
-        param.trim();
+        String blindPass = param;
         String next = "";
         for(int i=0; i<param.length(); i++){
             if((param.charAt(i) <= 'a' && param.charAt(i)>='z') ) {  // checks if char at i is less or equal to a and z (in between)
@@ -22,7 +22,7 @@ public interface validator {
                 }
             }
         }
-        return next;
+        return blindPass;
     }
 
     /*

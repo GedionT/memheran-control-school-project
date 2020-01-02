@@ -1,9 +1,6 @@
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
-
 
 
 public class Main {
@@ -20,9 +17,9 @@ public class Main {
 
         Scanner loader = new Scanner(System.in);
         Main main = new Main();                                   // creates a main object to access methods in this class
-        String x = null;                                          // termination signal
+        char x = '0';                                             // termination signal
 
-         System.out.println("\n\n\t\t      WELCOME :  እንኳን ደህና መጡ ፡ Bonjour ");
+         System.out.println("\n\n\t\t\t      WELCOME :  እንኳን ደህና መጡ ፡ Bonjour ");
          System.out.println("\t\t      ==============================================  ");
          System.out.println("\t\t       Instructor Information in Course Management    ");
          System.out.println("\t\t      =============================================== \n\n");
@@ -31,18 +28,19 @@ public class Main {
             boolean entry = main.auth(main.admins);               // authenticate administrator
 
                 if (entry) {
-                      System.out.println("===============================================");
-                      System.out.println(" Authentication Successful! You are logged in");
-                      System.out.println("===============================================");
+                    System.out.println("===============================================");
+                    System.out.println(" Authentication Successful! You are logged in");
+                    System.out.println("===============================================");
                       main.menu();
                  }
-            // if entry from auth returns true, goes to menu
                  else {
-                      System.out.println("Authorization failed, Try again? (Yes/No) ");
-                      x = loader.next();
+                      System.out.println("Authorization failed, Try again? (Y/N) ");
+                      x = loader.next().charAt(0);
                  }
 
-        }while( x != "no" || (x != "No") );
+        }while( (x != 'n') && (x != 'N') );
+
+        System.out.println(" -- Thank You, Good Bye! -- ");
     }
 
 
@@ -68,65 +66,11 @@ public class Main {
                             found[0] = true;
                         }
                     });
+
                      return found[0];
 
             case 2:
-                System.out.println("Enter information");
-                System.out.print("First name: ");
-                String firstName = input.next();
-//                validateString(firstName);
-                System.out.print("Middle name: ");
-                String middleName = input.next();
-//                validateString(middleName);
-                System.out.print("Last name: ");
-                String lastName = input.next();
-//                validateString(lastName);
-                System.out.print("Sex: ");
-                String sex = input.next();
-//                validateString(sex);
-                System.out.print("Nationality: ");
-                String nationality = input.next();
-//                validateString(nationality);
-                System.out.print("City: ");
-                String city = input.next();
-//                validateString(city);
-                System.out.print("Sub-city: ");
-                String subcity = input.next();
-//                validateString(subcity);
-                System.out.print("Woreda: ");
-                String woreda = input.next();
-//                validateString(woreda);
-                System.out.print("Place of Birth: ");
-                String place_of_birth = input.next();
-//                validateString(place_of_birth);
-                System.out.print("\nDate of Birth (DD/MM/YYYY): ");
-                String DoB = input.next();
-                Date date_of_birth = new SimpleDateFormat("dd/MM/yyyy").parse(DoB);
-                System.out.print("\nStarted Working on (DD/MM/YYYY: ");
-                String stDate = input.next();
-                Date start_date = new SimpleDateFormat("dd/MM/yyyy").parse(stDate);
-                System.out.print("\nMarital Status (Married, Single, Engaged): ");
-                String maritalStatus = input.nextLine();
-//                validateString(maritalStatus);
-                System.out.print("\nEducation Level: (BSC/Msc/PhD): ");
-                String educationLevel = input.nextLine();
-//                validateString(educationLevel);
-                System.out.print("\nPhone :");
-                String phone = input.nextLine();
-//                validatePhone(phone);
-                System.out.print("\nE-mail: ");
-                String email = input.nextLine();
-//                validateEmail(email);
-                System.out.print("\nSalary: ");
-                Double salary = input.nextDouble();
-                System.out.print("\nEnter new Username: ");
-                String usrname = input.next();
-                System.out.print("\nEnter new Password: ");
-                String pswd = input.next();
-                System.out.println("\n\n===========================\n");
-
-                Admin newEntrant = new Admin(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary
-                , phone, email, usrname, pswd);
+                Admin newEntrant = new Admin();
                 this.admins.add(newEntrant);
                 System.out.println("==============================");
                 System.out.println(" Account Created Successfully ");
