@@ -1,6 +1,4 @@
-import java.text.ParseException;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /*
@@ -8,7 +6,7 @@ import java.util.Scanner;
  * Both Admins and Instructors have intersecting data from this class.
 */
 
-public abstract class Employee extends Person {
+public abstract class Employee extends Person implements validator{
 
     // Declaring the types of data all employee's have registered upon employment
        private String empId;
@@ -34,56 +32,9 @@ public abstract class Employee extends Person {
         this.email = email;
     }
 
-    // optional param empty constructor for future iterations
-    Employee() throws ParseException {
-       System.out.println("\n\n===========================\n");
-       setEmpId();
-       System.out.print("Employment Id: " + getEmpId());
-       System.out.print("\nFirst Name: ");
-       setFirstName(input.nextLine());
-       stringValidate(getFirstName());
-       System.out.print("\nMiddle Name: ");
-       setMiddleName(input.nextLine());
-       stringValidate(getMiddleName());
-       System.out.print("\nLast Name: ");
-       setLastName(input.nextLine());
-       stringValidate(getLastName());
-       System.out.print("\nGender: ");
-       setSex(input.nextLine());
-       stringValidate(getSex());
-       System.out.print("\nNationality: ");
-       setNationality(input.nextLine());
-       stringValidate(getNationality());
-       System.out.print("\nCity: ");
-       setCity(input.nextLine());
-       stringValidate(getCity());
-       System.out.print("\nSub-City: ");
-       setSubcity(input.nextLine());
-       stringValidate(getSubcity());
-       System.out.print("\nWoreda: ");
-       setWoreda(input.nextLine());
-       stringValidate(getWoreda());
-       System.out.print("\nPlace of Birth: ");
-       setPlace_of_birth(input.nextLine());
-       stringValidate(getPlace_of_birth());
-       System.out.print("\nDate of Birth (DD/MM/YYYY): ");
-       String DoB = input.nextLine();
-       setDate_of_birth(new SimpleDateFormat("dd/MM/yyyy").parse(DoB));
-       System.out.print("\nMarital Status (Married, Single, Engaged): ");
-       maritalStatus = input.nextLine();
-       stringValidate(maritalStatus);
-       System.out.print("\nEducation Level: (BSC/Msc/PhD): ");
-       educationLevel = input.nextLine();
-       stringValidate(educationLevel);
-       System.out.print("\nPhone :");
-       phone = input.nextLine();
-       phoneValidate();
-       System.out.print("\nE-mail: ");
-       email = input.nextLine();
-       System.out.print("\nSalary: ");
-       salary = input.nextDouble();
-       System.out.println("\n\n===========================\n");
-   }
+
+    Employee() { // optional param empty constructor for future inheritance
+    }
 
    private static int amount = 100;
     // setters for individual information update
@@ -109,11 +60,11 @@ public abstract class Employee extends Person {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        phoneValidate(phone);
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        emailValidate(email);
     }
 
     // getters
@@ -144,7 +95,7 @@ public abstract class Employee extends Person {
     }
 
 
-        // calcAge();
+        //public int calcAge();
 
         //calcTax();
 
@@ -152,5 +103,4 @@ public abstract class Employee extends Person {
 
         //calcEmpTime();
 
-        //public void display()
 }

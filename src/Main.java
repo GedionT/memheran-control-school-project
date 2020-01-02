@@ -8,38 +8,47 @@ import java.util.Scanner;
 
 public class Main {
 
+    // Instantiate objects for necessary roles
     ArrayList<Instructor> instructors = new ArrayList<>();
+    ArrayList<Courses> courses = new ArrayList<>();
     private ArrayList<Admin> admins = new ArrayList<>();
+
 
     private Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) throws ParseException {
 
         Scanner loader = new Scanner(System.in);
-        String x = null;                                          // termination signal
         Main main = new Main();                                   // creates a main object to access methods in this class
+        String x = null;                                          // termination signal
+
+         System.out.println("\n\n\t\t      WELCOME :  እንኳን ደህና መጡ ፡ Bonjour ");
+         System.out.println("\t\t      ==============================================  ");
+         System.out.println("\t\t       Instructor Information in Course Management    ");
+         System.out.println("\t\t      =============================================== \n\n");
 
         do {
-            boolean entry = main.auth(main.admins);                         // authenticate administrator
+            boolean entry = main.auth(main.admins);               // authenticate administrator
 
-            if (entry) {
-                System.out.println("==============================");
-                System.out.println(" Account Created Successfully ");
-                System.out.println("==============================");
-                main.menu();
-            }
+                if (entry) {
+                      System.out.println("===============================================");
+                      System.out.println(" Authentication Successful! You are logged in");
+                      System.out.println("===============================================");
+                      main.menu();
+                 }
             // if entry from auth returns true, goes to menu
-            else {
-                System.out.println("Authorization failed, Try again? (Yes/No) ");
-                x = loader.next();
-            }
-        }while( x != "no" || (x != "No") );
+                 else {
+                      System.out.println("Authorization failed, Try again? (Yes/No) ");
+                      x = loader.next();
+                 }
 
+        }while( x != "no" || (x != "No") );
     }
+
 
     // method to send authorization signal
     private boolean auth(ArrayList<Admin> admins ) throws ParseException {
-        System.out.println("\n\n\t Authorization");
+        System.out.println("\n\n\t Authorization ");
         System.out.println(" ==================== ");
         System.out.println("1. Already Have an Admin Account");
         System.out.println("2. Create a new Admin Account");

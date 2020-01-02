@@ -14,10 +14,12 @@ public interface validator {
         param.trim();
         String next = "";
         for(int i=0; i<param.length(); i++){
-            if((param.charAt(i) <= 'a' && param.charAt(i)>='z') || (param.charAt(i)<='A' && param.charAt(i) >='Z')){
-                System.out.println("Please enter a valid string pattern");
-                next = input.nextLine();
-                stringValidate(next);
+            if((param.charAt(i) <= 'a' && param.charAt(i)>='z') ) {  // checks if char at i is less or equal to a and z (in between)
+                if(param.charAt(i)<='A' && param.charAt(i) >='Z') { // checks if char at i is less or equal to A and Z (in between)
+                    System.out.println("Please enter a valid string pattern");
+                    next = input.nextLine();
+                    stringValidate(next);
+                }
             }
         }
         return next;
@@ -29,8 +31,8 @@ public interface validator {
      * length of phone number string can't be less than 10 or greater than 13
      * length of phone number can't be 11 characters long
      * phone sequence must always start with a 0 followed by a 9
-     *
      */
+
     default void phoneValidate(String phone) {
 
         if (phone.length() < 10 || phone.length() > 13 || phone.length() == 11) {

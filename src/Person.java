@@ -5,7 +5,7 @@ import java.util.Date;
  * Contains the intersecting data the roles can contain.
  */
 
-abstract class Person {
+abstract class Person implements validator{
     private String firstName;
     private String middleName;
     private String lastName;
@@ -36,15 +36,15 @@ abstract class Person {
 
     // setter functions
     void setFirstName(String firstName) {
-        this.firstName = firstName;
+       stringValidate(firstName);
     }
 
     void setMiddleName(String middleName) {
-        this.middleName = middleName;
+       stringValidate(middleName);
     }
 
     void setLastName(String lastName) {
-        this.lastName = lastName;
+        stringValidate(lastName);
     }
 
     void setSex(String sex) {

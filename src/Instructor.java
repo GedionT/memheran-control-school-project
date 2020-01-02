@@ -10,7 +10,7 @@ import java.util.Scanner;
  * a contract to administer a course
  */
 
-public class Instructor extends Employee implements course {
+public class Instructor extends Employee implements validator{
 
     private String experience;
     private int section_num;
@@ -79,12 +79,11 @@ public class Instructor extends Employee implements course {
         stringValidate(getEducationLevel());
         System.out.print("\nPhone :");
         String phone = input.nextLine();
-        setEducationLevel(phone);
-        phoneValidate();
+        phoneValidate(phone);
         System.out.print("\nE-mail: ");
         String email = input.nextLine();
         setEmail(email);
-        emailValidate();
+        emailValidate(email);
         System.out.print("\nSalary: ");
         double salary = input.nextDouble();
         setSalary(salary);
