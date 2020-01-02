@@ -4,9 +4,8 @@
     <list default="true" id="aaaa258d-7deb-4a76-84c4-0193b869cf65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instructor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -32,6 +31,7 @@
   <component name="ProjectId" id="1VXQUkjhigPXnTfhDN24dfgyi6I" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="469" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />

@@ -3,7 +3,12 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class Employee extends Person {
+/*
+ * First-level-child that extends the person superclass
+ * Both Admins and Instructors have intersecting data from this class.
+*/
+
+public abstract class Employee extends Person {
 
     // Declaring the types of data all employee's have registered upon employment
        private String empId;
@@ -18,7 +23,7 @@ public class Employee extends Person {
        private Scanner input = new Scanner(System.in);
 
        // optional and not for use
-    public Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {
+       Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth);
         setEmpId();
         this.start_date = start_date;
@@ -29,8 +34,7 @@ public class Employee extends Person {
         this.email = email;
     }
 
-
-    public void insert() throws ParseException {
+    Employee() throws ParseException {
        System.out.println("\n\n===========================\n");
        setEmpId();
        System.out.print("Employment Id: " + getEmpId());

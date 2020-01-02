@@ -14,11 +14,11 @@ public class Admin extends Employee {
 
     // setter methods
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username.trim();
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password.trim();
     }
 
     // getter methods

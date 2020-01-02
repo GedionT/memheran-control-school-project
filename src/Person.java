@@ -1,6 +1,11 @@
 import java.util.Date;
 
-public abstract class Person {
+/*
+ * Super-class that is the base for Admins, Employees, and Instructors
+ * Contains the intersecting data the roles can contain.
+ */
+
+abstract class Person {
     private String firstName;
     private String middleName;
     private String lastName;
@@ -13,7 +18,7 @@ public abstract class Person {
     private Date date_of_birth;
 
     // Entire constructor for superclass
-    public Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda,  String place_of_birth, Date date_of_birth) {
+    Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -26,85 +31,88 @@ public abstract class Person {
         this.date_of_birth = date_of_birth;
     }
 
+    Person() { // void constructor for inheritance
+    }
+
     // setter functions
-    public void setFirstName(String firstName) {
+    void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public void setMiddleName(String middleName) {
+    void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
 
-    public void setLastName(String lastName) {
+    void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public void setSex(String sex) {
+    void setSex(String sex) {
         this.sex = sex;
     }
 
-    public void setNationality(String nationality) {
+    void setNationality(String nationality) {
         this.nationality = nationality;
     }
 
-    public void setCity(String city) {
+    void setCity(String city) {
         this.city = city;
     }
 
-    public void setSubcity(String subcity) {
+    void setSubcity(String subcity) {
         this.subcity = subcity;
     }
 
-    public void setWoreda(String woreda) {
+    void setWoreda(String woreda) {
         this.woreda = woreda;
     }
 
-    public void setPlace_of_birth(String place_of_birth) {
+    void setPlace_of_birth(String place_of_birth) {
         this.place_of_birth = place_of_birth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
+    void setDate_of_birth(Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
     // getter functions
-    public String getFirstName() {
+    String getFirstName() {
         return firstName;
     }
 
-    public String getMiddleName() {
+    String getMiddleName() {
         return middleName;
     }
 
-    public String getLastName() {
+    String getLastName() {
         return lastName;
     }
 
-    public String getSex() {
+    String getSex() {
         return sex;
     }
 
-    public String getNationality() {
+    String getNationality() {
         return nationality;
     }
 
-    public String getCity() {
+    String getCity() {
         return city;
     }
 
-    public String getSubcity() {
+    String getSubcity() {
         return subcity;
     }
 
-    public String getWoreda() {
+    String getWoreda() {
         return woreda;
     }
 
-    public String getPlace_of_birth() {
+    String getPlace_of_birth() {
         return place_of_birth;
     }
 
-    public Date getDate_of_birth() {
+    Date getDate_of_birth() {
         return date_of_birth;
     }
 }
