@@ -145,6 +145,8 @@ public class Main {
             case 4: ;break;
             case 5: ;break;
             case 6: ;break;
+            case 7: ;break;
+            case 8: ;break;
             default: System.out.println("Select among the choices");
                 break;
         }

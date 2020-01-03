@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Instructor extends Employee implements validator{
 
     private String experience;
-    private int section_num;
+    private int sections;
     private double overtime;
     private int building;
     private int officeNum;
@@ -25,13 +25,13 @@ public class Instructor extends Employee implements validator{
 
     public Instructor(String firstName, String middleName, String lastName, String sex, String nationality, String city,
                       String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus,
-                      String educationLevel, Double salary, String phone, String email, String experience, int section_num, double overtime,
+                      String educationLevel, Double salary, String phone, String email, String experience, int sections, double overtime,
                       int building, int officeNum, Date availableTime) {
 
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth,
                 start_date, maritalStatus, educationLevel, salary, phone, email);
         this.experience = experience;
-        this.section_num = section_num;
+        this.sections = sections;
         this.overtime = overtime;
         this.building = building;
         this.officeNum = officeNum;
@@ -58,8 +58,8 @@ public class Instructor extends Employee implements validator{
         return experience;
     }
 
-    public int getSection_num() {
-        return section_num;
+    public int getSections() {
+        return sections;
     }
 
     public double getOvertime() {
@@ -80,6 +80,12 @@ public class Instructor extends Employee implements validator{
 
     public void display() {
         // to print table
+        System.out.println("\n"+ getFirstName() + "  " + getMiddleName() + "  " + getLastName() + "  " + getSex() + "  " +
+                getNationality() + "  " + getCity() + "  " + getSubcity() + "  " + getWoreda() + "  " + getPlace_of_birth()
+                + "  " + getDate_of_birth() + "  " + getStart_date() + "  " + getMaritalStatus() + "  " + getEducationLevel()
+                + "  " + getSalary() + "  " + getPhone() + "  " + getEmail() + "  " + getExperience() + "  " + getSections()
+                + "  " + getBuilding() + "  " + getOfficeNum()  + "  " + getAvailableTime() );
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
     }
 
