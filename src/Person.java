@@ -13,12 +13,12 @@ abstract class Person implements validator{
     private String nationality;
     private String city;
     private String subcity;
-    private String woreda;
+    private int woreda;
     private String place_of_birth;
     private Date date_of_birth;
 
     // Entire constructor for superclass
-    Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth) {
+    Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -63,7 +63,7 @@ abstract class Person implements validator{
         this.subcity = subcity;
     }
 
-    void setWoreda(String woreda) {
+    void setWoreda(int woreda) {
         this.woreda = woreda;
     }
 
@@ -104,7 +104,7 @@ abstract class Person implements validator{
         return subcity;
     }
 
-    String getWoreda() {
+    int getWoreda() {
         return woreda;
     }
 

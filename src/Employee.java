@@ -21,7 +21,7 @@ public abstract class Employee extends Person implements validator{
        private Scanner input = new Scanner(System.in);
 
        // optional and not for use
-       Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, String woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {
+       Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth);
         setEmpId();
         this.start_date = start_date;

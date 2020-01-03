@@ -24,7 +24,7 @@ public interface validator {
         else
         {
             System.out.println("Please Enter an alphabetic string");
-            next = input.next();
+            next = input.nextLine();
             return stringValidate(next);
         }
     }
@@ -37,21 +37,21 @@ public interface validator {
      * phone sequence must always start with a 0 followed by a 9
      */
 
-    default void phoneValidate(String phone) {
+    default String phoneValidate(String phone) {
 
         if (phone.length() < 10 || phone.length() > 13 || phone.length() == 11) {
             System.out.println("The phone number you entered is invalid\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
-            phoneValidate(phone);
+            return phoneValidate(phone);
         }
         for (int i = 0; i < phone.length(); i++) {
             if ((phone.charAt(i) < '0' || phone.charAt(i) > '9')&&phone.charAt(0)!='+') {
                 System.out.println("The phone number you entered contains characters other than numbers");
                 System.out.println("Please enter a valid phone number");
                 phone = input.next();
-                phoneValidate(phone);
-                break;
+                return phoneValidate(phone);
+//                break;
             }
         }
 
@@ -59,20 +59,21 @@ public interface validator {
             System.out.println("The phone number you entered is invalid\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
-            phoneValidate(phone);
+            return phoneValidate(phone);
         }
         else if(phone.charAt(0)=='+'&&phone.charAt(1)!='2'&&phone.charAt(2)!='5'&&phone.charAt(3)!='1'){
             System.out.println("The phone number you entered is invalid\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
-            phoneValidate(phone);
+            return phoneValidate(phone);
         }
         else if(phone.charAt(0)=='2'&&phone.charAt(1)!='5'&&phone.charAt(2)!='1'){
             System.out.println("The phone number you entered is invalid\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
-            phoneValidate(phone);
+            return phoneValidate(phone);
         }
+        return phone;
     }
 
     /*
@@ -82,7 +83,7 @@ public interface validator {
      * Then calls recursively on mismatch
      */
 
-    default void emailValidate(String email) {
+    default String emailValidate(String email) {
 
         int flag1 = 0, flag2 = 0; //to check whether there is "@" and "." in the email address
         for (int i = 3; i < email.length(); i++) {
@@ -92,13 +93,15 @@ public interface validator {
                 flag2 = 1;
             }
         }
+
         if (flag1 == 0 || flag2 == 0) {
             System.out.println("Invalid Email Address\n");
             System.out.println("please enter a valid email address");
             email = input.next();
             input.nextLine();
-            emailValidate(email);
+            return emailValidate(email);
         }
+        return email;
     }
 
 }

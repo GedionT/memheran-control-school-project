@@ -1,5 +1,7 @@
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -11,18 +13,47 @@ public class Main {
     private ArrayList<Admin> admins = new ArrayList<>();
 
 
-    private Scanner input = new Scanner(System.in);
+    // root user creation for convenience
+    String firstName="Sam";
+    String middleName= "Raphael";
+    String lastName="Anyimut";
+    String sex="male";
+    String nationality="Ethiopian";
+    String city="ADD";
+    String subcity="Bole";
+    int woreda=32;
+    String place_of_birth="ADD";
+    Date date_of_birth=new SimpleDateFormat("dd/MM/yyyy").parse("11/12/1999");
+    Date start_date=new SimpleDateFormat("dd/MM/yyyy").parse("08/03/2019");
+    String maritalStatus="single";
+    String educationLevel="BSc";
+    Double salary= 85122.22;
+    String phone="0911255552";
+    String email="samraph@gmail.com";
+    String usrname="root";
+    String pswd="123";
+
+    //
+
+        private Scanner input = new Scanner(System.in);
+
+    public Main() throws ParseException {
+    }
 
     public static void main(String[] args) throws ParseException {
 
         Scanner loader = new Scanner(System.in);
         Main main = new Main();                                   // creates a main object to access methods in this class
+        Admin root = new Admin(main.firstName, main.middleName, main.lastName, main.sex, main.nationality,main.city, main.subcity,main.woreda,main.place_of_birth,main.date_of_birth,main.start_date,
+                main.maritalStatus, main.educationLevel, main.salary, main.phone,main.email, main.usrname, main.pswd);
+        main.admins.add(root);                                    // saves root admin information
         char x = '0';                                             // termination signal
 
-         System.out.println("\n\n\t\t\t      WELCOME :  እንኳን ደህና መጡ ፡ Bonjour ");
-         System.out.println("\t\t      ==============================================  ");
+        System.out.println("\n\n\t\t   =================================================");
+         System.out.println("\t\t\t      WELCOME :  እንኳን ደህና መጡ ፡ BONJOUR ");
+         System.out.println("\t\t     ==============================================  ");
          System.out.println("\t\t       Instructor Information in Course Management    ");
-         System.out.println("\t\t      =============================================== \n\n");
+         System.out.println("\t\t     =============================================== \n\n");
 
         do {
             boolean entry = main.auth(main.admins);               // authenticate administrator
@@ -90,12 +121,12 @@ public class Main {
         System.out.println(" ==================================================== ");
         System.out.println("\n\t\t\t Menu \n");
         System.out.println("\t\t ---------------- \n");
-        System.out.println("\t 1. Employ Multiple Instructors");
-        System.out.println("\t 2. Employ A Single Instructor");
-        System.out.println("\t 3. Search Instructor by Name");
-        System.out.println("\t 4. Search Instructor by Id");
-        System.out.println("\t 5. Sort Instructors by Name");
-        System.out.println("\t 6. List All Instructors \n\n");
+        System.out.println("\t 1. Employ Instructor");
+        System.out.println("\t 2. Search Instructor by Name");
+        System.out.println("\t 3. Search Instructor by Id");
+        System.out.println("\t 4. Sort Instructors by Name");
+        System.out.println("\t 5. Fire Instructor");
+        System.out.println("\t 5. List All Instructors \n\n");
         System.out.println("Enter your Choice: ");
 
         int choice = input.nextInt();
