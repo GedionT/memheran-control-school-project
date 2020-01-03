@@ -7,7 +7,6 @@ import java.util.Scanner;
 /*
  * Main Driver for program entry.
  * All functionality implemented here
- *
  */
 
 public class Main {
@@ -41,8 +40,8 @@ public class Main {
 
         private Scanner input = new Scanner(System.in);
 
-    public Main() throws ParseException {
-    }
+        //to add root user
+        private Main() throws ParseException {}
 
     public static void main(String[] args) throws ParseException {
 
@@ -153,12 +152,13 @@ public class Main {
     }
 
     //Search function
-    private ArrayList<Admin> search(ArrayList<Admin> admins, String username){
-        ArrayList<Admin> results = new ArrayList<>();
+    private ArrayList<Instructor> search(ArrayList<Instructor> instructors, String name){
+        ArrayList<Instructor> results = new ArrayList<>();
 
-        admins.forEach(admin -> {
-            if(admin.getUsername().equals(username.trim())) {
-                results.add(admin);
+        // accumulate results
+        instructors.forEach(instructor -> {
+            if(instructor.getFirstName().equals(name.trim())) {
+                results.add(instructor);
             }
         });
         return results;

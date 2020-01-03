@@ -51,6 +51,7 @@ public class Instructor extends Employee implements validator{
     }
 
     public void setSalary(double salary){
+        // Runtime Polymorphism [Overriding implemented here]
 
     }
 
@@ -74,9 +75,7 @@ public class Instructor extends Employee implements validator{
         return officeNum;
     }
 
-    public Date getAvailableTime() {
-        return availableTime;
-    }
+    public Date getAvailableTime() { return availableTime;  }
 
     public void display() {
         // to print table

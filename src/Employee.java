@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.Scanner;
 
 /*
  * First-level-child that extends the person superclass
@@ -19,8 +18,6 @@ public abstract class Employee extends Person implements validator{
        private String phone;
        private String email;
 
-
-       private Scanner input = new Scanner(System.in);
 
        // optional and not for use
        Employee(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email) {

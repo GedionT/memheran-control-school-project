@@ -13,8 +13,7 @@ public interface validator {
 
      default String stringValidate(String param){
          int counter = 0;
-        String next = "";
-        for(int i=0; i<param.length(); i++){
+         for(int i=0; i<param.length(); i++){
 
             if(Character.isLetter(param.charAt(i))) {
                 counter++;
@@ -25,7 +24,7 @@ public interface validator {
         else
         {
             System.out.println("Please Enter an alphabetic string");
-            next = input.nextLine();
+            String next = input.nextLine();
             return stringValidate(next);
         }
     }
