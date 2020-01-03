@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 
 /*
- * Am independent class to add new courses in the course management system by the admin
- * later on used by instructor using an interface to make a contract to teach a course
+ * An independent class to add new courses in the course management system by the admin
+ * later on used by admin to link an instructor with a course.
+ * Note: Several inputs are validated using the validator interface to reduce mistakes
+ *
  */
 
 public class Courses implements validator {
@@ -27,11 +29,9 @@ public class Courses implements validator {
             System.out.println("\t Add a Course \n");
             System.out.println("\t ==================\n");
             System.out.print("Course Name: ");
-            this.course_name = input.nextLine();
-            stringValidate(course_name);
+            setCourse_name(stringValidate(input.nextLine()));
             System.out.print("Course Code: ");
-            this.course_code = input.nextLine();
-            stringValidate(course_code);
+            setCourse_code(input.next());
             System.out.print("Credit Hour: ");
             this.credit_hour = input.nextInt();
             System.out.print("Lecture hours: ");
@@ -41,12 +41,11 @@ public class Courses implements validator {
             System.out.print("Lab hour: ");
             this.lab_hour = input.nextInt();
             System.out.print("Category ( Compulsory, Optional, .. ): ");
-            this.category = input.next();
-            stringValidate(category);
+            setCategory(stringValidate(input.nextLine()));
+            System.out.println("=====================");
         }
 
         // setters
-
     public void setInput(Scanner input) {
         this.input = input;
     }

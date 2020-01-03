@@ -2,12 +2,21 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*
+ * Admin roles are given for employees
+ * The only role that can access the system and perform actions
+ * Can create, read, query Employees, specifically instructors along their associated course
+ * Can add new course information as well
+ * Note: Several inputs are validated using the validator interface to reduce mistakes
+ *
+ */
+
 public class Admin extends Employee implements validator {
 
     private String username;
     private String password;
 
-    // default constructor
+    // default constructor used for creating the root admin
        public Admin(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email, String usrname, String pswd) {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary, phone, email);
         this.username = usrname;

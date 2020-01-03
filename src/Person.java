@@ -1,8 +1,10 @@
 import java.util.Date;
 
 /*
- * Super-class that is the base for Admins, Employees, and Instructors
+ * Super-class that is the base for several classes
+ * To modularize common information in Admins, Employees, and Instructors
  * Contains the intersecting data the roles can contain.
+ *
  */
 
 abstract class Person implements validator{
@@ -17,8 +19,9 @@ abstract class Person implements validator{
     private String place_of_birth;
     private Date date_of_birth;
 
-    // Entire constructor for superclass
-    Person(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth) {
+    // Entire constructor for the class
+    Person(String firstName, String middleName, String lastName, String sex, String nationality, String city,
+           String subcity, int woreda, String place_of_birth, Date date_of_birth) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

@@ -8,6 +8,7 @@ public interface validator {
      * to validate strings sequences
      * strings can't contain numbers and other special
      * characters. a regEx equivalent would be (A-Z || a-z) only.
+     *
      */
 
      default String stringValidate(String param){
@@ -35,6 +36,7 @@ public interface validator {
      * length of phone number string can't be less than 10 or greater than 13
      * length of phone number can't be 11 characters long
      * phone sequence must always start with a 0 followed by a 9
+     *
      */
 
     default String phoneValidate(String phone) {
@@ -81,6 +83,7 @@ public interface validator {
      * email must contain @ in the character sequence
      * and a . as well but not at the end of the string
      * Then calls recursively on mismatch
+     *
      */
 
     default String emailValidate(String email) {

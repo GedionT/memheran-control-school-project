@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+/*
+ * Main Driver for program entry.
+ * All functionality implemented here
+ *
+ */
 
 public class Main {
 
@@ -13,26 +18,25 @@ public class Main {
     private ArrayList<Admin> admins = new ArrayList<>();
 
 
-    // root user creation for convenience
-    String firstName="Sam";
-    String middleName= "Raphael";
-    String lastName="Anyimut";
-    String sex="male";
-    String nationality="Ethiopian";
-    String city="ADD";
-    String subcity="Bole";
-    int woreda=32;
-    String place_of_birth="ADD";
-    Date date_of_birth=new SimpleDateFormat("dd/MM/yyyy").parse("11/12/1999");
-    Date start_date=new SimpleDateFormat("dd/MM/yyyy").parse("08/03/2019");
-    String maritalStatus="single";
-    String educationLevel="BSc";
-    Double salary= 85122.22;
-    String phone="0911255552";
-    String email="samraph@gmail.com";
-    String usrname="root";
-    String pswd="123";
-
+    // root user creation for convenience on first launch - direct access
+    private String firstName="Samuel";
+    private String middleName= "Raphael";
+    private String lastName = "Solomon";
+    private String sex = "male";
+    private String nationality="Ethiopian";
+    private String city="ADD";
+    private String subcity="Bole";
+    private int woreda=32;
+    private String place_of_birth = "ADD";
+    private Date date_of_birth=new SimpleDateFormat("dd/MM/yyyy").parse("11/12/1999");
+    private Date start_date=new SimpleDateFormat("dd/MM/yyyy").parse("08/03/2019");
+    private String maritalStatus="single";
+    private String educationLevel="BSc";
+    private Double salary= 85122.22;
+    private String phone="0911255552";
+    private String email="samraph@gmail.com";
+    private String usrname="root";
+    private String pswd="123";
     //
 
         private Scanner input = new Scanner(System.in);
@@ -46,6 +50,7 @@ public class Main {
         Main main = new Main();                                   // creates a main object to access methods in this class
         Admin root = new Admin(main.firstName, main.middleName, main.lastName, main.sex, main.nationality,main.city, main.subcity,main.woreda,main.place_of_birth,main.date_of_birth,main.start_date,
                 main.maritalStatus, main.educationLevel, main.salary, main.phone,main.email, main.usrname, main.pswd);
+
         main.admins.add(root);                                    // saves root admin information
         char x = '0';                                             // termination signal
 
@@ -121,12 +126,14 @@ public class Main {
         System.out.println(" ==================================================== ");
         System.out.println("\n\t\t\t Menu \n");
         System.out.println("\t\t ---------------- \n");
-        System.out.println("\t 1. Employ Instructor");
-        System.out.println("\t 2. Search Instructor by Name");
+        System.out.println("\t 1. Employ Single Instructor");
+        System.out.println("\t 2. Employ Multiple Instructors");
         System.out.println("\t 3. Search Instructor by Id");
-        System.out.println("\t 4. Sort Instructors by Name");
-        System.out.println("\t 5. Fire Instructor");
-        System.out.println("\t 5. List All Instructors \n\n");
+        System.out.println("\t 4. Search Instructor by Name");
+        System.out.println("\t 5. Sort Instructors by Name");
+        System.out.println("\t 6. Fire an Instructor");
+        System.out.println("\t 7. List All Instructors");
+        System.out.println("\t 8. Add a New Course \n\n");
         System.out.println("Enter your Choice: ");
 
         int choice = input.nextInt();

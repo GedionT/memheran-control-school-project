@@ -4,6 +4,8 @@ import java.util.Scanner;
 /*
  * First-level-child that extends the person superclass
  * Both Admins and Instructors have intersecting data from this class.
+ * It is the core class that every role inherits to get access privilege and storgae
+ *
 */
 
 public abstract class Employee extends Person implements validator{
@@ -94,13 +96,25 @@ public abstract class Employee extends Person implements validator{
         return email;
     }
 
+        // Calculate age using present_date - date_of_birth
+        public int calcAge() {
 
-        //public int calcAge();
+            return 0;
+        };
 
-        //calcTax();
+        // Calculate employment time using present_date - emp_date
+        public void calcEmpTime() {
 
-        //calcNet();
+        };
 
-        //calcEmpTime();
+        // Calculate Net Salary after taxation
+        public double calcNet() {
+            if(salary >= 10000)    salary = salary*0.65;
+            else if(salary>=7000)  salary = salary*0.75;
+            else if(salary>=4000)  salary = salary*0.85;
+            else if(salary>=2000)  salary = salary*0.95;
+
+            return salary;
+        };
 
 }

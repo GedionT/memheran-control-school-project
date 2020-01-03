@@ -8,6 +8,8 @@ import java.util.Scanner;
  * takes advantage of the information for all employees
  * implements an interface course, since every instructor must have
  * a contract to administer a course
+ *  Note: Several inputs are validated using the validator interface to reduce mistakes
+ *
  */
 
 public class Instructor extends Employee implements validator{
@@ -25,7 +27,9 @@ public class Instructor extends Employee implements validator{
                       String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus,
                       String educationLevel, Double salary, String phone, String email, String experience, int section_num, double overtime,
                       int building, int officeNum, Date availableTime) {
-        super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary, phone, email);
+
+        super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth,
+                start_date, maritalStatus, educationLevel, salary, phone, email);
         this.experience = experience;
         this.section_num = section_num;
         this.overtime = overtime;
@@ -74,7 +78,7 @@ public class Instructor extends Employee implements validator{
         return availableTime;
     }
 
-    public void displayTable() {
+    public void display() {
         // to print table
 
     }
