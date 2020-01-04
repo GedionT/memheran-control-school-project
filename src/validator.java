@@ -23,7 +23,7 @@ public interface validator {
         if(counter == param.length()) return param;
         else
         {
-            System.out.println("Please Enter an alphabetic string");
+            System.out.println("Please Enter an alphabetic string without numbers and special characters");
             String next = input.nextLine();
             return stringValidate(next);
         }
