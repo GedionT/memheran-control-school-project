@@ -54,6 +54,11 @@ public class Instructor extends Employee implements validator{
 
     }
 
+    public double calcNet() {
+        // Runtime Polymorphism [Overriding implemented here]
+        return 0;
+    }
+
     public String getExperience() {
         return experience;
     }
