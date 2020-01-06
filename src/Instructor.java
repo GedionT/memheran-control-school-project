@@ -110,7 +110,7 @@ public class Instructor extends Employee implements validator{
         else if(sal>=4000)  sal = sal*0.85;
         else if(sal>=2000)  sal = sal*0.95;
 
-        return ot + sal; // net salary
+        return ot + sal; // net salary returned
     }
 
     public int getExperience() {

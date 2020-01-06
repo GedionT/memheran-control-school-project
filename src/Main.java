@@ -132,7 +132,8 @@ public class Main {
         System.out.println("\t 5. Sort Instructors by Name");
         System.out.println("\t 6. Fire an Instructor");
         System.out.println("\t 7. List All Instructors");
-        System.out.println("\t 8. Add a New Course \n\n");
+        System.out.println("\t 8. Add a New Course");
+        System.out.println("\t 9. Logout \n\n");
         System.out.println("Enter your Choice: ");
 
         int choice = input.nextInt();
@@ -146,6 +147,7 @@ public class Main {
             case 6: ;break;
             case 7: ;break;
             case 8: ;break;
+            case 9: ;break;
             default: System.out.println("Select among the choices");
                 break;
         }

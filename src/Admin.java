@@ -17,13 +17,13 @@ public class Admin extends Employee implements validator {
     private String password;
 
     // default constructor used for creating the root admin
-       public Admin(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email, String usrname, String pswd) {
+    Admin(String firstName, String middleName, String lastName, String sex, String nationality, String city, String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus, String educationLevel, Double salary, String phone, String email, String usrname, String pswd) {
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth, start_date, maritalStatus, educationLevel, salary, phone, email);
         this.username = usrname;
         this.password = pswd;
     }
 
-      public Admin() throws ParseException {
+      Admin() throws ParseException {
 
           System.out.println("\n\n============================\n");
           super.setEmpId();
@@ -43,9 +43,10 @@ public class Admin extends Employee implements validator {
           System.out.print("Sub-City: ");
           setSubcity(stringValidate(input.nextLine()));
           System.out.print("Woreda: ");
-          setWoreda(input.nextInt());
-          System.out.println();
+          String val = input.next();
+          setWoreda(Integer.parseInt(val));
           System.out.print("Place of Birth: ");
+          System.out.println();
           setPlace_of_birth(stringValidate(input.nextLine()));
           System.out.print("Date of Birth (DD/MM/YYYY): ");
           String DoB = input.nextLine();
@@ -54,7 +55,7 @@ public class Admin extends Employee implements validator {
           } catch (Exception e) {
               System.out.print("Error : "  + e);
           }
-          System.out.print("Marital Status (Married, Single, Engaged): ");
+          System.out.print("\nMarital Status (Married, Single, Engaged): ");
           setMaritalStatus(stringValidate(input.nextLine()));
           System.out.print("Education Level: (BSC/Msc/PhD): ");
           setEducationLevel(stringValidate(input.nextLine()));
@@ -85,11 +86,11 @@ public class Admin extends Employee implements validator {
     }
 
     // getter methods
-    public String getUsername() {
+    String getUsername() {
         return username;
     }
 
-    public String getPassword() {
+    String getPassword() {
            return password;
     }
 }
