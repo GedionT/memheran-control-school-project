@@ -133,7 +133,8 @@ public class Main {
         System.out.println("\t 6. Fire an Instructor");
         System.out.println("\t 7. List All Instructors");
         System.out.println("\t 8. Add a New Course");
-        System.out.println("\t 9. Logout \n\n");
+        System.out.println("\t 9. List all Courses");
+        System.out.println("\t10. Logout \n\n");
         System.out.println("Enter your Choice: ");
 
         int choice = input.nextInt();
@@ -148,13 +149,14 @@ public class Main {
             case 7: ;break;
             case 8: ;break;
             case 9: ;break;
+            case 10: ;break;
             default: System.out.println("Select among the choices");
                 break;
         }
     }
 
-    //Search function
-    private ArrayList<Instructor> search(ArrayList<Instructor> instructors, String name){
+    // Search function, Instructor by name
+    private ArrayList<Instructor> searchInstructorByName(ArrayList<Instructor> instructors, String name){
         ArrayList<Instructor> results = new ArrayList<>();
 
         // accumulate results
@@ -164,7 +166,20 @@ public class Main {
             }
         });
         return results;
+    }
 
+    // Search function, Instructor by id
+    private ArrayList<Instructor> searchInstructorById(ArrayList<Instructor> instructors, String id){
+       ArrayList<Instructor> results = new ArrayList<>();
+
+       // accumulate results
+        instructors.forEach(instructor -> {
+            // must be updated to return one unique record to cut resource cost
+            if(instructor.getEmpId().equals(id.trim())) {
+                results.add(instructor);
+            }
+        });
+        return results;
     }
 }
 

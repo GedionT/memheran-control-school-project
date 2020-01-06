@@ -113,27 +113,27 @@ public class Instructor extends Employee implements validator{
         return ot + sal; // net salary returned
     }
 
-    public int getExperience() {
+    private int getExperience() {
         return experience;
     }
 
-    public int getSections() {
+    private int getSections() {
         return sections;
     }
 
-    public double getOvertime() {
+    private double getOvertime() {
         return overtime;
     }
 
-    public int getBuilding() {
+    private int getBuilding() {
         return building;
     }
 
-    public int getOfficeNum() {
+    private int getOfficeNum() {
         return officeNum;
     }
 
-    public String getAvailableTime() { return availableTime;  }
+    private String getAvailableTime() { return availableTime;  }
 
     public void display() {
         // to print table
