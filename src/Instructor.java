@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -13,19 +14,19 @@ import java.util.Scanner;
 
 public class Instructor extends Employee implements validator{
 
-    private String experience;
+    private int experience;
     private int sections;
     private double overtime;
     private int building;
     private int officeNum;
-    private Date availableTime;
+    private String availableTime;
 
-    public Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     public Instructor(String firstName, String middleName, String lastName, String sex, String nationality, String city,
                       String subcity, int woreda, String place_of_birth, Date date_of_birth, Date start_date, String maritalStatus,
-                      String educationLevel, Double salary, String phone, String email, String experience, int sections, double overtime,
-                      int building, int officeNum, Date availableTime) {
+                      String educationLevel, Double salary, String phone, String email, int experience, int sections, double overtime,
+                      int building, int officeNum, String availableTime) {
 
         super(firstName, middleName, lastName, sex, nationality, city, subcity, woreda, place_of_birth, date_of_birth,
                 start_date, maritalStatus, educationLevel, salary, phone, email);
@@ -43,23 +44,76 @@ public class Instructor extends Employee implements validator{
         super.setEmpId();
         System.out.print("Employment Id: " + getEmpId());
         System.out.print("\nFirst Name: ");
-
-
-
+        setFirstName(stringValidate(input.nextLine()));
+        System.out.print("Middle Name: ");
+        setMiddleName(stringValidate(input.nextLine()));
+        System.out.print("Last Name: ");
+        setLastName(stringValidate(input.nextLine()));
+        System.out.print("Gender: ");
+        setSex(stringValidate(input.nextLine()));
+        System.out.print("Nationality: ");
+        setNationality(stringValidate(input.nextLine()));
+        System.out.print("City: ");
+        setCity(stringValidate(input.nextLine()));
+        System.out.print("Sub-City");
+        setSubcity(stringValidate(input.nextLine()));
+        System.out.print("Woreda: ");
+        setWoreda(input.nextInt());
+        System.out.println();
+        System.out.println("Place of Birth: ");
+        setPlace_of_birth(stringValidate(input.nextLine()));
+        System.out.print("Date of Birth (DD/MM/YYYY): ");
+        String DoB=input.nextLine();
+        try{
+            setDate_of_birth(new SimpleDateFormat("dd/MM/yyyy").parse(DoB));
+        } catch (Exception e) {
+            System.out.print("Error : " + e);
+        }
+        System.out.print("Marital Status (Married, Single, Engaged, ..): ");
+        setMaritalStatus(stringValidate(input.nextLine()));
+        System.out.print("Education Level: (BSC/Msc/PhD): ");
+        setEducationLevel(stringValidate(input.nextLine()));
+        System.out.print("Phone :");
+        setPhone(phoneValidate(input.nextLine()));
+        System.out.print("E-mail: ");
+        setEmail(emailValidate(input.nextLine()));
+        System.out.print("Salary: ");
+        double salary = input.nextDouble();
+        setSalary(salary);
+        input.nextLine();
+        System.out.println(" ---------------------- ");
+        System.out.print("Previous Experience Time (in years) : ");
+        experience = input.nextInt();
+        System.out.print("Number of Sections: ");
+        sections = input.nextInt();
+        System.out.print("Overtime hours per month: ");
+        overtime = input.nextDouble();
+        System.out.print("Office Building Number: ");
+        building = input.nextInt();
+        System.out.print("Office Room Number: ");
+        officeNum = input.nextInt();
+        System.out.print("Available as advisory on: ");
+        availableTime = input.nextLine();
         System.out.println("\n\n===========================\n");
     }
 
-    public void setSalary(double salary){
-        // Runtime Polymorphism [Overriding implemented here]
-
-    }
 
     public double calcNet() {
         // Runtime Polymorphism [Overriding implemented here]
-        return 0;
+        // assuming the instructor gets paid 450 per overtime hour
+        double ot = getOvertime() * 450;
+        double sal = getSalary();
+
+        // calc salary after taxation
+        if(sal >= 10000)    sal = sal*0.65;
+        else if(sal>=7000)  sal = sal*0.75;
+        else if(sal>=4000)  sal = sal*0.85;
+        else if(sal>=2000)  sal = sal*0.95;
+
+        return ot + sal; // net salary
     }
 
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
@@ -79,14 +133,14 @@ public class Instructor extends Employee implements validator{
         return officeNum;
     }
 
-    public Date getAvailableTime() { return availableTime;  }
+    public String getAvailableTime() { return availableTime;  }
 
     public void display() {
         // to print table
         System.out.println("\n"+ getFirstName() + "  " + getMiddleName() + "  " + getLastName() + "  " + getSex() + "  " +
                 getNationality() + "  " + getCity() + "  " + getSubcity() + "  " + getWoreda() + "  " + getPlace_of_birth()
                 + "  " + getDate_of_birth() + "  " + getStart_date() + "  " + getMaritalStatus() + "  " + getEducationLevel()
-                + "  " + getSalary() + "  " + getPhone() + "  " + getEmail() + "  " + getExperience() + "  " + getSections()
+                + "  " + getSalary() + "  " + calcNet() + "  " + getPhone() + "  " + getEmail() + "  " + getExperience() + "  " + getSections()
                 + "  " + getBuilding() + "  " + getOfficeNum()  + "  " + getAvailableTime() );
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
