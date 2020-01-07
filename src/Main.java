@@ -79,7 +79,7 @@ public class Main {
     }
 
 
-    // method to send authorization signal
+    // method to send authorization signal or create a new admin account
     private boolean auth(ArrayList<Admin> admins ) throws ParseException {
         System.out.println("\n\n\t Authorization ");
         System.out.println(" ==================== ");
@@ -147,9 +147,26 @@ public class Main {
             case 5: ;break;
             case 6: ;break;
             case 7: ;break;
-            case 8: ;break;
-            case 9: ;break;
-            case 10: ;break;
+            case 8:
+                    Courses newCourse = new Courses();
+                    this.courses.add(newCourse);
+                    System.out.println("===========================");
+                    System.out.println(" Course Added Successfully ");
+                    System.out.println("===========================");
+                    this.menu(); break;
+            case 9:
+                    System.out.println("Code       Name       Department     Term      Credit_hr    Lecture_hr       Lab_hr        Category");
+                    System.out.println("===================================================================================================");
+                    courses.forEach(Courses::display); // display all courses with info
+                         break;
+            case 10:
+                // logout for new user
+                    try {
+                        auth(admins);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                         break;
             default: System.out.println("Select among the choices");
                 break;
         }

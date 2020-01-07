@@ -128,4 +128,10 @@ public class Courses implements validator {
     public String getCategory() {
         return category;
     }
+
+    public void display() {
+            System.out.println(getCourse_code() + "  " + getCourse_name() + "  "
+            + getDepartment() + "  " + getTerm() + "  " + getCredit_hour() + "  "
+            + getLecture_hour() + "  " +  getLab_hour() + "  " + getCategory());
+    }
 }
