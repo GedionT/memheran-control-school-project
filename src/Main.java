@@ -155,7 +155,7 @@ public class Main {
                     System.out.println("===========================");
                     this.menu(); break;
             case 9:
-                    System.out.println("Code       Name       Department     Term      Credit_hr    Lecture_hr       Lab_hr        Category");
+                    System.out.println("Code\t\t\t Name\t\t\t Department\t\t\t Credit_hr\t Lecture_hr\t Lab_hr\t Category");
                     System.out.println("===================================================================================================");
                     courses.forEach(Courses::display); // display all courses with info
                          break;

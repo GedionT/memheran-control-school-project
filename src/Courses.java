@@ -29,19 +29,21 @@ public class Courses implements validator {
             System.out.println("\t Add a Course \n");
             System.out.println("\t ==================\n");
             System.out.print("Course Name: ");
-            setCourse_name(stringValidate(input.nextLine()));
+            setCourse_name(input.nextLine());
             System.out.print("Course Code: ");
             setCourse_code(input.next());
+            System.out.print("Department: ");
+            setDepartment(input.next());
             System.out.print("Credit Hour: ");
-            this.credit_hour = input.nextInt();
+            setCredit_hour(input.nextInt());
             System.out.print("Lecture hours: ");
-            this.lecture_hour  = input.nextInt();
+            setLecture_hour(input.nextInt());
             System.out.print("Tutorial hours: ");
-            this.tutorial_hour = input.nextInt();
+            setTutorial_hour(input.nextInt());
             System.out.print("Lab hour: ");
-            this.lab_hour = input.nextInt();
+            setLab_hour(input.nextInt());
             System.out.print("Category ( Compulsory, Optional, .. ): ");
-            setCategory(stringValidate(input.nextLine()));
+            setCategory(input.nextLine());
             System.out.println("=====================");
         }
 
@@ -130,8 +132,8 @@ public class Courses implements validator {
     }
 
     public void display() {
-            System.out.println(getCourse_code() + "  " + getCourse_name() + "  "
-            + getDepartment() + "  " + getTerm() + "  " + getCredit_hour() + "  "
-            + getLecture_hour() + "  " +  getLab_hour() + "  " + getCategory());
+            System.out.println(getCourse_code() + "\t\t\t " + getCourse_name() + "\t\t "
+            + getDepartment() + "\t\t " + getCredit_hour() + "\t\t\t " + getLecture_hour()
+                    + "\t\t\t " +  getLab_hour() + "\t\t " + getCategory());
     }
 }
