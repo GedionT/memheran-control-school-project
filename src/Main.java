@@ -154,35 +154,38 @@ public class Main {
             case 1:
 
                 try {
-                    Instructor newInstructor = new Instructor();
-                    int counter=0;
-                    System.out.println("Select Course for Instructor");
-                    for(Courses course: courses){
-                        System.out.println("NO.\tCode" + spaces(20) +"Name"+spaces(20)+" Department"+ spaces(20)+"Credit_hr\t Lecture_hr\t Lab_hr\t Category");
-                        System.out.println("============================================================================================================================================================================================");
-                        System.out.print((counter++)+"\t");
-                        course.display();// display all courses with info
-                        pause();
-                    }
-
-                    int chce = input.nextInt();
-                    if(chce>courses.size()||chce<0){
-                        System.out.println("ERROR\nTry Again");
-                        pause();
-                        break;
-                    }
-                    newInstructor.setCourse(courses.get(chce));
-                    instructors.add(newInstructor);
+                    addInstructor();
                 } catch (ParseException e) {
-                    System.out.println("Error found: "+ e);
+                    System.out.println("Error found: " + e);
                 }
                 break;
-            case 2: ;break;
-            case 3: ;break;
-            case 4: ;break;
+            case 2:
+                String ch;
+                try {
+                    do {
+                        addInstructor();
+                        input.nextLine();
+                        System.out.println("Enter Again? (Y/N)");
+                        ch=input.nextLine();
+                    } while (ch.equals("Y") || ch.equals("y"));
+                } catch(ParseException e){
+                    System.out.println("Error Found "+ e);
+                }
+                break;
+            case 3:
+                System.out.println("Enter id of Instructor");
+                String id = input.nextLine();
+                displayInstructors(searchInstructorById(instructors,id));
+                break;
+            case 4:
+
+                System.out.println("Enter Name of Instructor");
+                String name = input.nextLine();
+                displayInstructors(searchInstructorByName(instructors,name));
+                break;
             case 5: ;break;
             case 6: ;break;
-            case 7: ;break;
+            case 7: displayInstructors(instructors);break;
             case 8:
                     Courses newCourse = new Courses();
                     this.courses.add(newCourse);
@@ -211,13 +214,37 @@ public class Main {
          this.menu();
      }
 
+    private void addInstructor() throws ParseException{
+        Instructor newInstructor = new Instructor();
+        int counter=0;
+        System.out.println("Select Course for Instructor");
+        System.out.println("NO.\tCode" + spaces(20) +"Name"+spaces(20)+" Department"+ spaces(20)+"Credit_hr\t Lecture_hr\t Lab_hr\t Category");
+        System.out.println("============================================================================================================================================================================================");
+        for(Courses course: courses){
+            System.out.print((++counter)+"\t");
+            course.display();// display all courses with info
+        }
+        System.out.println("Select the no of your choice");
+        int chce = input.nextInt();
+        if(chce>courses.size()||chce<0){
+            System.out.println("ERROR\nTry Again");
+            pause();
+        }
+        try{newInstructor.setCourse(courses.get(chce-1));}catch (IndexOutOfBoundsException ie){
+            System.out.println("ERROR\nTry Again");
+            pause();
+        }
+        instructors.add(newInstructor);
+    }
+
     // Search function, Instructor by name
     private ArrayList<Instructor> searchInstructorByName(ArrayList<Instructor> instructors, String name){
         ArrayList<Instructor> results = new ArrayList<>();
 
         // accumulate results
         instructors.forEach(instructor -> {
-            if(instructor.getFirstName().equals(name.trim())) {
+            String result=instructor.getFirstName() + instructor.getLastName() + instructor.getMiddleName();
+            if(result.contains(name.trim())) {
                 results.add(instructor);
             }
         });
@@ -236,6 +263,14 @@ public class Main {
             }
         });
         return results;
+    }
+    private void displayInstructors(ArrayList<Instructor> pInstructor ){
+            System.out.println(instructors.isEmpty());
+        System.out.println("EmpId"+spaces(5)+"Name"+spaces(30)+"Gender"+spaces(5)+"Nationality"+spaces(5)+"Course ID  Course Name");
+        System.out.println("============================================================================================================================================================================================");
+        for(Instructor inst : pInstructor){
+            inst.display();
+        }
     }
 }
 

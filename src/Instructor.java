@@ -154,11 +154,12 @@ public class Instructor extends Employee implements validator{
 
     public void display() {
         // to print table
-        System.out.println("\n"+ getEmpId() + spaces(7) + "  " + getMiddleName() + "  " + getLastName() + "  " + getSex() + "  " +
-                getNationality() + "  " + getCity() + "  " + getSubcity() + "  " + getWoreda() + "  " + getPlace_of_birth()
-                + "  " + getDate_of_birth() + "  " + getStart_date() + "  " + getMaritalStatus() + "  " + getEducationLevel()
-                + "  " + getSalary() + "  " + calcNet() + "  " + getPhone() + "  " + getEmail() + "  " + getExperience() + "  " + getSections()
-                + "  " + getBuilding() + "  " + getOfficeNum()  + "  " + getAvailableTime() );
+        System.out.println(getEmpId()
+                + spaces(10-getEmpId().length())
+                + getFirstName() + " " + getLastName()
+                + spaces(34 - (getFirstName().length() + getLastName().length()))
+                + getSex() + spaces(10-getSex().length()) + getNationality() + spaces(16-getNationality().length())
+                +getCourse().getCourse_code()+ spaces(11-getCourse().getCourse_code().length()) + getCourse().getCourse_name());
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
     }

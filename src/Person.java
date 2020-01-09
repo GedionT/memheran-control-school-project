@@ -38,16 +38,12 @@ abstract class Person implements validator{
     }
 
     // setter functions
-    void setFirstName(String firstName) {
-       stringValidate(firstName);
-    }
+    void setFirstName(String firstName) {  this.firstName = firstName;   }
 
-    void setMiddleName(String middleName) {
-       stringValidate(middleName);
-    }
+    void setMiddleName(String middleName) { this.middleName = middleName;    }
 
     void setLastName(String lastName) {
-        stringValidate(lastName);
+        this.lastName = lastName;
     }
 
     void setSex(String sex) {
@@ -79,9 +75,7 @@ abstract class Person implements validator{
     }
 
     // getter functions
-    String getFirstName() {
-        return firstName;
-    }
+    String getFirstName() {return firstName;    }
 
     String getMiddleName() {
         return middleName;

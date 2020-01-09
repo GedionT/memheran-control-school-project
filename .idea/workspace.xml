@@ -5,10 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Instructor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ_OOP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Courses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Courses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instructor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +17,9 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="185" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PROJ_OOP" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
