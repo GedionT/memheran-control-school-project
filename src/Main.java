@@ -1,6 +1,7 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -12,8 +13,8 @@ import java.util.Scanner;
 public class Main {
 
     // Instantiate objects for necessary roles
-    ArrayList<Instructor> instructors = new ArrayList<>();
-    ArrayList<Courses> courses = new ArrayList<>();
+    private ArrayList<Instructor> instructors = new ArrayList<>();
+    private ArrayList<Courses> courses = new ArrayList<>();
     private ArrayList<Admin> admins = new ArrayList<>();
 
 
@@ -178,13 +179,21 @@ public class Main {
                 displayInstructors(searchInstructorById(instructors,id));
                 break;
             case 4:
-
                 System.out.println("Enter Name of Instructor");
                 String name = input.nextLine();
                 displayInstructors(searchInstructorByName(instructors,name));
                 break;
-            case 5: ;break;
-            case 6: ;break;
+            case 5:
+                sortInstructorsByFirstName();
+                displayInstructors(instructors);
+                break;
+
+            case 6:
+                System.out.println("Enter id of Instructor");
+                String delId = input.nextLine();
+                Instructor del = searchInstructorById(instructors,delId).get(0);
+                instructors.remove(del);
+                break;
             case 7: displayInstructors(instructors);break;
             case 8:
                     Courses newCourse = new Courses();
@@ -271,10 +280,9 @@ public class Main {
         for(Instructor inst : pInstructor){
             inst.display();
         }
+        }
+    //    Sort by firstName of instructors
+    private void sortInstructorsByFirstName(){
+        instructors.sort(Comparator.comparing(Instructor::getFirstName));
     }
 }
-
-    //Sort by username
-//            admins.sort((a1,a2) -> {
-//                a1.username.compareTo(a2.username);
-//                    });
