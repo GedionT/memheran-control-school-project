@@ -1,5 +1,5 @@
+import java.io.IOException;
 import java.util.Scanner;
-
 
 /*
  * An independent class to add new courses in the course management system by the admin
@@ -31,9 +31,9 @@ public class Courses implements validator {
             System.out.print("Course Name: ");
             setCourse_name(input.nextLine());
             System.out.print("Course Code: ");
-            setCourse_code(input.next());
+            setCourse_code(input.nextLine());
             System.out.print("Department: ");
-            setDepartment(input.next());
+            setDepartment(input.nextLine());
             System.out.print("Credit Hour: ");
             setCredit_hour(input.nextInt());
             System.out.print("Lecture hours: ");
@@ -42,11 +42,16 @@ public class Courses implements validator {
             setTutorial_hour(input.nextInt());
             System.out.print("Lab hour: ");
             setLab_hour(input.nextInt());
+            input.nextLine();
             System.out.print("Category ( Compulsory, Optional, .. ): ");
             setCategory(input.nextLine());
             System.out.println("=====================");
         }
-
+    public String spaces(int n){
+        String sp="";
+        for (int i=0; i<n;i++)sp+=" ";
+        return sp;
+    }
         // setters
     public void setInput(Scanner input) {
         this.input = input;
@@ -132,8 +137,8 @@ public class Courses implements validator {
     }
 
     public void display() {
-            System.out.println(getCourse_code() + "\t\t\t " + getCourse_name() + "\t\t "
-            + getDepartment() + "\t\t " + getCredit_hour() + "\t\t\t " + getLecture_hour()
-                    + "\t\t\t " +  getLab_hour() + "\t\t " + getCategory());
+            System.out.println(getCourse_code() +spaces(24-getCourse_code().length()) + getCourse_name() + spaces(25-getCourse_name().length())
+                    + getDepartment() + spaces(30-getDepartment().length())  + getCredit_hour() + "\t\t\t " + getLecture_hour()
+                    + "\t\t\t" +  getLab_hour() + "\t\t" + getCategory());
     }
 }

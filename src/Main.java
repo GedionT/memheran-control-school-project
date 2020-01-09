@@ -42,7 +42,16 @@ public class Main {
 
         //to add root user
         private Main() throws ParseException {}
-
+    public String spaces(int n){
+            String sp="";
+            for (int i=0; i<n;i++)sp+=" ";
+            return sp;
+    }
+    public void pause(){
+        input.nextLine();
+        System.out.println("Press Enter to Continue");
+        String x = input.nextLine();
+    }
     public static void main(String[] args) throws ParseException {
 
         Scanner loader = new Scanner(System.in);
@@ -153,12 +162,14 @@ public class Main {
                     System.out.println("===========================");
                     System.out.println(" Course Added Successfully ");
                     System.out.println("===========================");
-                    this.menu(); break;
+                    pause();
+                    break;
             case 9:
-                    System.out.println("Code\t\t\t Name\t\t\t Department\t\t\t Credit_hr\t Lecture_hr\t Lab_hr\t Category");
-                    System.out.println("===================================================================================================");
+                    System.out.println("Code" + spaces(20) +"Name"+spaces(20)+" Department"+ spaces(20)+"Credit_hr\t Lecture_hr\t Lab_hr\t Category");
+                    System.out.println("============================================================================================================================================================================================");
                     courses.forEach(Courses::display); // display all courses with info
-                         break;
+                    pause();
+                    break;
             case 10:
                 // logout for new user
                     try {
@@ -170,7 +181,8 @@ public class Main {
             default: System.out.println("Select among the choices");
                 break;
         }
-    }
+         this.menu();
+     }
 
     // Search function, Instructor by name
     private ArrayList<Instructor> searchInstructorByName(ArrayList<Instructor> instructors, String name){
