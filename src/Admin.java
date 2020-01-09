@@ -43,10 +43,9 @@ public class Admin extends Employee implements validator {
           System.out.print("Sub-City: ");
           setSubcity(stringValidate(input.nextLine()));
           System.out.print("Woreda: ");
-          String val = input.next();
-          setWoreda(Integer.parseInt(val));
+          setWoreda(input.nextInt());
+          input.nextLine();
           System.out.print("Place of Birth: ");
-          System.out.println();
           setPlace_of_birth(stringValidate(input.nextLine()));
           System.out.print("Date of Birth (DD/MM/YYYY): ");
           String DoB = input.nextLine();
@@ -57,9 +56,9 @@ public class Admin extends Employee implements validator {
           }
           System.out.print("\nMarital Status (Married, Single, Engaged): ");
           setMaritalStatus(stringValidate(input.nextLine()));
-          System.out.print("Education Level: (BSC/Msc/PhD): ");
+          System.out.print("Education Level (BSC/Msc/PhD): ");
           setEducationLevel(stringValidate(input.nextLine()));
-          System.out.print("Phone :");
+          System.out.print("Phone: ");
           setPhone(phoneValidate(input.nextLine()));
           System.out.print("E-mail: ");
           setEmail(emailValidate(input.nextLine()));

@@ -19,6 +19,16 @@ public class Instructor extends Employee implements validator{
     private double overtime;
     private int building;
     private int officeNum;
+    private Courses course;
+
+    public Courses getCourse() {
+        return course;
+    }
+
+    public void setCourse(Courses course) {
+        this.course = course;
+    }
+
     private String availableTime;
 
     private Scanner input = new Scanner(System.in);
@@ -55,11 +65,11 @@ public class Instructor extends Employee implements validator{
         setNationality(stringValidate(input.nextLine()));
         System.out.print("City: ");
         setCity(stringValidate(input.nextLine()));
-        System.out.print("Sub-City");
+        System.out.print("Sub-City: ");
         setSubcity(stringValidate(input.nextLine()));
         System.out.print("Woreda: ");
         setWoreda(input.nextInt());
-        System.out.println();
+        input.nextLine();
         System.out.println("Place of Birth: ");
         setPlace_of_birth(stringValidate(input.nextLine()));
         System.out.print("Date of Birth (DD/MM/YYYY): ");
@@ -71,7 +81,7 @@ public class Instructor extends Employee implements validator{
         }
         System.out.print("Marital Status (Married, Single, Engaged, ..): ");
         setMaritalStatus(stringValidate(input.nextLine()));
-        System.out.print("Education Level: (BSC/Msc/PhD): ");
+        System.out.print("Education Level (BSC/Msc/PhD): ");
         setEducationLevel(stringValidate(input.nextLine()));
         System.out.print("Phone :");
         setPhone(phoneValidate(input.nextLine()));
@@ -135,9 +145,16 @@ public class Instructor extends Employee implements validator{
 
     private String getAvailableTime() { return availableTime;  }
 
+    // function to calculate necessary spaces for display
+    private String spaces(int n){
+        String space="";
+            for(int i=0; i<n; i++) space+=" ";
+        return space;
+    }
+
     public void display() {
         // to print table
-        System.out.println("\n"+ getFirstName() + "  " + getMiddleName() + "  " + getLastName() + "  " + getSex() + "  " +
+        System.out.println("\n"+ getEmpId() + spaces(7) + "  " + getMiddleName() + "  " + getLastName() + "  " + getSex() + "  " +
                 getNationality() + "  " + getCity() + "  " + getSubcity() + "  " + getWoreda() + "  " + getPlace_of_birth()
                 + "  " + getDate_of_birth() + "  " + getStart_date() + "  " + getMaritalStatus() + "  " + getEducationLevel()
                 + "  " + getSalary() + "  " + calcNet() + "  " + getPhone() + "  " + getEmail() + "  " + getExperience() + "  " + getSections()

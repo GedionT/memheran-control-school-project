@@ -42,12 +42,15 @@ public class Main {
 
         //to add root user
         private Main() throws ParseException {}
-    public String spaces(int n){
-            String sp="";
-            for (int i=0; i<n;i++)sp+=" ";
-            return sp;
+
+    private String spaces(int n){
+            String space="";
+            for (int i=0; i<n; i++) space+=" ";
+            return space;
     }
-    public void pause(){
+
+    // pauses the screen with a message until enter is pressed
+    private void pause(){
         input.nextLine();
         System.out.println("Press Enter to Continue");
         String x = input.nextLine();
@@ -64,9 +67,9 @@ public class Main {
 
         System.out.println("\n\n\t\t   =================================================");
          System.out.println("\t\t\t      WELCOME :  እንኳን ደህና መጡ ፡ BONJOUR ");
-         System.out.println("\t\t     ==============================================  ");
+         System.out.println("\t\t       ==============================================  ");
          System.out.println("\t\t       Instructor Information in Course Management    ");
-         System.out.println("\t\t     =============================================== \n\n");
+         System.out.println("\t\t     ================================================== \n\n");
 
         do {
             boolean entry = main.auth(main.admins);               // authenticate administrator
@@ -145,11 +148,35 @@ public class Main {
         System.out.println("\t 9. List all Courses");
         System.out.println("\t10. Logout \n\n");
         System.out.println("Enter your Choice: ");
-
         int choice = input.nextInt();
 
         switch(choice) {
-            case 1: ;break;
+            case 1:
+
+                try {
+                    Instructor newInstructor = new Instructor();
+                    int counter=0;
+                    System.out.println("Select Course for Instructor");
+                    for(Courses course: courses){
+                        System.out.println("NO.\tCode" + spaces(20) +"Name"+spaces(20)+" Department"+ spaces(20)+"Credit_hr\t Lecture_hr\t Lab_hr\t Category");
+                        System.out.println("============================================================================================================================================================================================");
+                        System.out.print((counter++)+"\t");
+                        course.display();// display all courses with info
+                        pause();
+                    }
+
+                    int chce = input.nextInt();
+                    if(chce>courses.size()||chce<0){
+                        System.out.println("ERROR\nTry Again");
+                        pause();
+                        break;
+                    }
+                    newInstructor.setCourse(courses.get(chce));
+                    instructors.add(newInstructor);
+                } catch (ParseException e) {
+                    System.out.println("Error found: "+ e);
+                }
+                break;
             case 2: ;break;
             case 3: ;break;
             case 4: ;break;

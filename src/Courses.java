@@ -47,11 +47,7 @@ public class Courses implements validator {
             setCategory(input.nextLine());
             System.out.println("=====================");
         }
-    public String spaces(int n){
-        String sp="";
-        for (int i=0; i<n;i++)sp+=" ";
-        return sp;
-    }
+
         // setters
     public void setInput(Scanner input) {
         this.input = input;
@@ -136,7 +132,14 @@ public class Courses implements validator {
         return category;
     }
 
-    public void display() {
+    // function to calculate necessary spaces for display
+    private String spaces(int n){
+        String space="";
+            for (int i=0; i<n; i++) space+=" ";
+        return space;
+    }
+
+    void display() {
             System.out.println(getCourse_code() +spaces(24-getCourse_code().length()) + getCourse_name() + spaces(25-getCourse_name().length())
                     + getDepartment() + spaces(30-getDepartment().length())  + getCredit_hour() + "\t\t\t " + getLecture_hour()
                     + "\t\t\t" +  getLab_hour() + "\t\t" + getCategory());
