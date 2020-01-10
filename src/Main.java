@@ -178,14 +178,18 @@ public class Main {
                 }
                 break;
             case 3:
+                input.nextLine();
                 System.out.println("Enter id of Instructor");
                 String id = input.nextLine();
                 displayInstructors(searchInstructorById(instructors,id));
+                pause();
                 break;
             case 4:
+                input.nextLine();
                 System.out.println("Enter Name of Instructor");
                 String name = input.nextLine();
                 displayInstructors(searchInstructorByName(instructors,name));
+                pause();
                 break;
             case 5:
                 sortInstructorsByFirstName();
@@ -193,10 +197,12 @@ public class Main {
                 break;
 
             case 6:
+                input.nextLine();
                 System.out.println("Enter id of Instructor");
                 String delId = input.nextLine();
                 Instructor del = searchInstructorById(instructors,delId).get(0);
                 instructors.remove(del);
+                pause();
                 break;
             case 7: displayInstructors(instructors);break;
             case 8:
