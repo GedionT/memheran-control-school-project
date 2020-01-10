@@ -4,7 +4,7 @@ import java.util.Scanner;
 /*
  * An independent class to add new courses in the course management system by the admin
  * later on used by admin to link an instructor with a course.
- * Note: Several inputs are validated using the validator interface to reduce mistakes
+ * Note: Several inputs are not validated using the validator interface, but needs exception handling upon entry
  *
  */
 

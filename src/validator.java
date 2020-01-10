@@ -8,6 +8,7 @@ public interface validator {
      * to validate strings sequences
      * strings can't contain numbers and other special
      * characters. a regEx equivalent would be (A-Z || a-z) only.
+     * Spaces can't also be included
      *
      */
 
@@ -16,11 +17,11 @@ public interface validator {
          for(int i=0; i<param.length(); i++){
 
             if(Character.isLetter(param.charAt(i))) {
-                counter++;
+                counter++;                          // counts the number of characters
             }
         }
 
-        if(counter == param.length()) return param;
+        if(counter == param.length()) return param; // validation passed
         else
         {
             System.out.println("Please Enter an alphabetic string without numbers and special characters");
@@ -42,7 +43,7 @@ public interface validator {
 
         if (phone.length() < 10 || phone.length() > 13 || phone.length() == 11) {
             System.out.println("The phone number you entered is invalid\n");
-            System.out.println("Please enter a valid phone number");
+            System.out.println("Please enter a valid phone number with a proper range");
             phone = input.next();
             return phoneValidate(phone);
         }
@@ -52,7 +53,6 @@ public interface validator {
                 System.out.println("Please enter a valid phone number");
                 phone = input.next();
                 return phoneValidate(phone);
-//                break;
             }
         }
 
@@ -63,13 +63,13 @@ public interface validator {
             return phoneValidate(phone);
         }
         else if(phone.charAt(0)=='+'&&phone.charAt(1)!='2'&&phone.charAt(2)!='5'&&phone.charAt(3)!='1'){
-            System.out.println("The phone number you entered is invalid\n");
+            System.out.println("The phone number you entered has invalid country code\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
             return phoneValidate(phone);
         }
         else if(phone.charAt(0)=='2'&&phone.charAt(1)!='5'&&phone.charAt(2)!='1'){
-            System.out.println("The phone number you entered is invalid\n");
+            System.out.println("The phone number you entered is invalid, please start with + sign\n");
             System.out.println("Please enter a valid phone number");
             phone = input.next();
             return phoneValidate(phone);

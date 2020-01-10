@@ -8,6 +8,9 @@ import java.util.Scanner;
 /*
  * Main Driver for program entry.
  * All functionality implemented here
+ * Makes use of the modularized classes to make a
+ * connected functionality
+ *
  */
 
 public class Main {
@@ -51,7 +54,8 @@ public class Main {
     }
 
     // pauses the screen with a message until enter is pressed
-    private void pause(){
+    private void pause()
+    {
         input.nextLine();
         System.out.println("Press Enter to Continue");
         String x = input.nextLine();
