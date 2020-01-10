@@ -216,7 +216,7 @@ public class Main {
             case 9:
                     System.out.println("Code" + spaces(20) +"Name"+spaces(20)+" Department"+ spaces(20)+"Credit_hr\t Lecture_hr\t Lab_hr\t Category");
                     System.out.println("============================================================================================================================================================================================");
-                    courses.forEach(Courses::display); // display all courses with info
+                    courses.forEach(Courses::display); // di splay all courses with info
                     pause();
                     break;
             case 10:
